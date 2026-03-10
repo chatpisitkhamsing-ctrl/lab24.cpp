@@ -3,7 +3,23 @@
 using namespace std;
 
 //Write function count() here.
+#include<iostream>
+#include<set> // ต้องเพิ่มบรรทัดนี้
 
+using namespace std;
+
+int count(int data[], int size) {
+    // สร้าง set ของเลข integer
+    set<int> unique_numbers;
+
+    // วนลูปนำข้อมูลจาก Array ทุกตัวใส่เข้าไปใน set
+    for(int i = 0; i < size; i++) {
+        unique_numbers.insert(data[i]);
+    }
+
+    // ขนาดของ set (size) ก็คือจำนวนสมาชิกที่ไม่ซ้ำกันนั่นเอง
+    return unique_numbers.size();
+}
 int main(){	
 	int data[] = {1,2,4,5,4,8,2,1,2,4,6,1,4,4,4,2,1,0,12}; 
 	
